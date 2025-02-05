@@ -61,8 +61,6 @@ export const getCountryFlag = async (req: Request, res: Response): Promise<any> 
             (country: any) => country.iso3.toLowerCase() === countryCode
         );
 
-        console.log(countryCode, countriesFlags.data[0].iso2.toLowerCase())
-
         if (!countryData) {
             return res.status(404).json({ error: 'Country not found' });
         }
