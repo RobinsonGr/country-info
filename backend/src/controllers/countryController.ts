@@ -33,8 +33,6 @@ export const getCountryPopulation = async (req: Request, res: Response): Promise
             (country: {code: string}) => country.code.toLocaleLowerCase() === countryCode
         );
 
-        console.log(countryData)
-
         if (!countryData) {
             return res.status(404).json({ error: 'Country not found' });
         }
